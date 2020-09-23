@@ -97,9 +97,6 @@ e.g. if you hit 5 + - &div; &times; then the last operation will be applied to t
 
 ## Running The Project locally
 
-### Live version
-
-[10 Digit Calculator](https://optimistic-montalcini-d93b11.netlify.app/)
 
 1. Clone this project locally
 2. Run `npm install` in your bash/command line
@@ -108,6 +105,9 @@ e.g. if you hit 5 + - &div; &times; then the last operation will be applied to t
 #### jest testing
 
 - Run `npm test` in your bash/command line
+
+### Live version
+[10 Digit Calculator](https://optimistic-montalcini-d93b11.netlify.app/)
 
 ## Dev Dependencies
 
