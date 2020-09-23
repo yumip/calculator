@@ -5,7 +5,7 @@
 The project is inspired by [How to build an HTML calculator app from scratch using JavaScript](https://www.freecodecamp.org/news/how-to-build-an-html-calculator-app-from-scratch-using-javascript-4454b8714b98/).
 
 The idea is to make a basic calculator.
-LIVE LINK:
+LIVE LINK:https://optimistic-montalcini-d93b11.netlify.app/
 
 ![calculator](calculator_image.PNG)
 
@@ -99,7 +99,7 @@ e.g. if you hit 5 + - &div; &times; then the last operation will be applied to t
 
 ### Live version
 
-[10 Digit Calculator]()
+[10 Digit Calculator](https://optimistic-montalcini-d93b11.netlify.app/)
 
 1. Clone this project locally
 2. Run `npm install` in your bash/command line
