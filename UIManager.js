@@ -57,7 +57,7 @@ export default class UIManager{
             } else if (UIdisplay === "AC") {
                 this.parameters.allClear();
                 this.display.innerHTML = 0;
-                this.displayMini.innerHTML = "Display Previous Entry";
+                this.displayMini.innerHTML = "&nbsp";
             }
         } else if (actionKey === "negpos") {
             this.display.innerHTML = this.parameters.negativeInt();
@@ -73,7 +73,7 @@ export default class UIManager{
             this.calculator.querySelector("button[data-action= 'clear']").innerHTML = "AC";
             this.parameters.allClear();
             this.display.innerHTML = "err";
-            this.displayMini.innerHTML = "Display Previous Entry";
+            this.displayMini.innerHTML = "&nbsp";
         }
     }
 
@@ -107,7 +107,7 @@ export default class UIManager{
             //safety net
             this.calculator.querySelector("button[data-action= 'clear']").innerHTML = "AC";
             this.parameters.allClear();
-            this.displayMini.innerHTML = "Display Previous Entry";
+            this.displayMini.innerHTML = "&nbsp";
         }
         return this.parameters.answer;
     }
