@@ -26,10 +26,9 @@ export function operationManager(prevOp, ans, convertNum) {
             break;
         default:
             return "error";
-    }
+    };
     if (newValue.toString().length> 10) {
-        //console.log(newValue);
        return newValue.toPrecision(10);
-    }
+    };
     return newValue;
 }

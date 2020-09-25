@@ -9,13 +9,22 @@ export default class CalculatorParameters {
 
     numberManager(input) {
         //calculator.querySelector("button[data-action= 'clear']").innerHTML = "CE";
+        let digitCounter = 9;
+        if (this.strNumber[0] === "-"){
+            digitCounter += 1;
+        }
+        if (this.strNumber.includes(".")){
+            digitCounter += 1;
+             if (this.strNumber.substring(0, 3) === "-0."||
+                 this.strNumber.substring(0, 2) === "0."){
+                     digitCounter += 1;
+                 }
+         }
 
-        if (this.strNumber.length > 10 && this.strNumber[0]==="-"){
-            return this.strNumber.substring(0, 11);
-        }
-        if (this.strNumber.length > 9 && this.strNumber[0] !== "-") {
-            return this.strNumber.substring(0,10);
-        }
+        if (this.strNumber.length > digitCounter){
+            return this.strNumber.substring(0, digitCounter + 1);
+        };
+
         if (this.strNumber.includes(".") && input==="."){
             return this.strNumber;
         }
@@ -51,11 +60,7 @@ export default class CalculatorParameters {
         return this.strNumber;
     }
     backspace(){
-         if (this.strNumber.length <= 1//|| 
-        //     this.strNumber==="NaN"||
-        //     this.strNumber === "undefined" || 
-        //     this.strNumber === "err"
-        ) {
+         if (this.strNumber.length <= 1){
             this.strNumber = "0";
         } else {
         const splitNum=this.strNumber.split("");
