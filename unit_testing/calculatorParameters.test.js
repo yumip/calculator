@@ -37,7 +37,7 @@ test("Decimal testing '00.120', '.120', '0.120' all should be '0.120' and '-0.12
     expect(parameters.strNumber).toBe("-0.12");
 });
 
-test("Decimal and other number edge cases, 0.12.0 => 0.120 (remove the second and more decimals), 0012.0 => 12.0 ", () => {
+test("Decimal and other number edge cases, 0.12.0 => 0.120 0.12.. => 0.12 0.120. => 0.120(remove the second and more decimals), 0012.0 => 12.0 ", () => {
     const parameters = new CalculatorParameters();
     const array1 = ["0", ".", "1", "2",".", "0"];
     for (let i = 0; i < array1.length; i++) {
@@ -50,6 +50,13 @@ test("Decimal and other number edge cases, 0.12.0 => 0.120 (remove the second an
         parameters.numberManager(array2[i])
     };
     expect(parameters.strNumber).toBe("0.12");
+
+        parameters.strNumber = "";
+    const array2a = ["0", ".", "1", "2", "0", "."];
+    for (let i = 0; i < array2a.length; i++) {
+        parameters.numberManager(array2a[i])
+    };
+    expect(parameters.strNumber).toBe("0.120");
     parameters.strNumber = "";
     const array3 = ["0","0",".", "1", "2","0"];
     for (let i = 0; i < array3.length; i++) {

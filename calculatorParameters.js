@@ -9,11 +9,15 @@ export default class CalculatorParameters {
 
     numberManager(input) {
         //calculator.querySelector("button[data-action= 'clear']").innerHTML = "CE";
+
         if (this.strNumber.length > 10 && this.strNumber[0]==="-"){
             return this.strNumber.substring(0, 11);
         }
         if (this.strNumber.length > 9 && this.strNumber[0] !== "-") {
             return this.strNumber.substring(0,10);
+        }
+        if (this.strNumber.includes(".") && input==="."){
+            return this.strNumber;
         }
         this.strNumber = this.strNumber.concat(input);
 
