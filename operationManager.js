@@ -12,6 +12,9 @@ export function operationManager(prevOp, ans, convertNum) {
             newValue = ans * convertNum;
             break;
         case "divide":
+        if (convertNum === 0 || convertNum === -0){
+            return "error";
+        }
             newValue = ans / convertNum;
             break;
         case "calculate":
@@ -22,7 +25,7 @@ export function operationManager(prevOp, ans, convertNum) {
             }
             break;
         default:
-            return "err";
+            return "error";
     }
     if (newValue.toString().length> 10) {
         //console.log(newValue);

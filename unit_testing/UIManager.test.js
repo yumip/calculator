@@ -8,9 +8,6 @@ import fs from "fs";
 const html =
     fs.readFileSync(path.resolve(__dirname, "../index.html"), "utf8");
 //import CalculatorParameters from './calculatorParameters.js';
-import {
-    operationManager
-} from '.!./operationManager.js';
 //Dom related equals testing and DOM testing
 let calculator;
 let keys;
@@ -59,7 +56,7 @@ test('utils testing 23 (string input)', () => {
     const UIdisplay = "3";
     calculatorUI.utils(actionKey, operationOrExcuteKey, UIdisplay);
     expect(calculatorUI.display.innerHTML).toMatch("23");
-    expect(calculatorUI.displayMini.innerHTML).toMatch("Display Previous Entry");
+    expect(calculatorUI.displayMini.innerHTML).toMatch("10-digit Calculator");
 });
 test('utils All Clear ', () => {
     const parameters = new CalculatorParameters();
@@ -74,7 +71,7 @@ test('utils All Clear ', () => {
     const UIdisplay = "AC";
     calculatorUI.utils(actionKey, operationOrExcuteKey, UIdisplay);
     expect(calculatorUI.display.innerHTML).toMatch("0");
-    expect(calculatorUI.displayMini.innerHTML).toMatch("Display Previous Entry");
+    expect(calculatorUI.displayMini.innerHTML).toMatch("&nbsp");
 });
 
 //Total peration 2 patterns  1+23 = 24, 23 +,

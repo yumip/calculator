@@ -47,10 +47,11 @@ export default class CalculatorParameters {
         return this.strNumber;
     }
     backspace(){
-        if (this.strNumber.length <= 1|| 
-            this.strNumber==="NaN"||
-            this.strNumber === "undefined" || 
-            this.strNumber === "err") {
+         if (this.strNumber.length <= 1//|| 
+        //     this.strNumber==="NaN"||
+        //     this.strNumber === "undefined" || 
+        //     this.strNumber === "err"
+        ) {
             this.strNumber = "0";
         } else {
         const splitNum=this.strNumber.split("");

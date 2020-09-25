@@ -43,7 +43,14 @@ export default class UIManager{
     }
     //experimenting
     utils(actionKey, operationOrExcuteKey, UIdisplay){
-
+        if (this.display.innerHTML==="error"|| 
+        this.display.innerHTML === "infinity" ||
+        isNaN(this.display.innerHTML)){
+            this.parameters.allClear();
+            this.display.innerHTML = 0;
+            this.displayMini.innerHTML = "&nbsp";
+            return;
+        }
         if (!actionKey || actionKey === "decimal") {
             //  Click on any number key (incl. decimal key) the AC button changes to CE.
             this.calculator.querySelector("button[data-action= 'clear']").innerHTML = "CE";
@@ -72,7 +79,7 @@ export default class UIManager{
             //safety net just in case
             this.calculator.querySelector("button[data-action= 'clear']").innerHTML = "AC";
             this.parameters.allClear();
-            this.display.innerHTML = "err";
+            this.display.innerHTML = "error";
             this.displayMini.innerHTML = "&nbsp";
         }
     }
@@ -98,13 +105,12 @@ export default class UIManager{
             this.parameters.previousOperator && this.equalsEdgeCases(actionKey, displayNumber);
             this.parameters.previousOperator = actionKey;
         } else {
-            //standard mathematical operation
+            //standard mathematical operationS
             this.standardOperation(actionKey);
             this.parameters.operationBeforeCalculate = this.parameters.previousOperator;
             this.parameters.previousOperator = actionKey;
         }
-        if (this.parameters.answer === "err"){
-            //safety net
+        if (this.parameters.answer === "error") {
             this.calculator.querySelector("button[data-action= 'clear']").innerHTML = "AC";
             this.parameters.allClear();
             this.displayMini.innerHTML = "&nbsp";

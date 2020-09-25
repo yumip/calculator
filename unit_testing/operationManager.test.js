@@ -37,13 +37,15 @@ test("multiply, 0.001*-0.1 =-0.099", () => {
 test("division, 2/2 =1", () => {
     expect(operationManager("divide", 2, 2)).toEqual(1);
 });
-test("division, 0.1/-0.001 =100", () => {
+test("division, 0.1/-0.001 =-100", () => {
     expect(operationManager("divide", 0.1, -0.001)).toEqual(-100);
 });
-test("division, 0.001/0 = infinity", () => {
-    expect(operationManager("divide", 0.001, 0)).toBe(Infinity);
+test("division, 0.001/0 = error", () => {
+    expect(operationManager("divide", 0.001, 0)).toBe("error");
 });
-
+test("division, 0.001/0 = error", () => {
+    expect(operationManager("divide", 0.001, -0)).toBe("error");
+});
 //equals test 1 
 test("equals (if the previous number is still stored in the answer ie. 1), 6 = 6", () => {
     // if the previous number is stored
