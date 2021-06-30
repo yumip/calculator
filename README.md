@@ -2,8 +2,6 @@
 
 ## OverView
 
-The project is inspired by [How to build an HTML calculator app from scratch using JavaScript](https://www.freecodecamp.org/news/how-to-build-an-html-calculator-app-from-scratch-using-javascript-4454b8714b98/).
-
 The idea is to make a basic calculator.
 LIVE LINK:https://optimistic-montalcini-d93b11.netlify.app/
 
